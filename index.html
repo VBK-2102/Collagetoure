@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - College Campus</title>
+    <link href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="tourContainer"></div>
+    <div class="tour-controls">
+        <div class="title-bar">Virtual Tour - Campus</div>
+        <div class="thumbnail-strip">
+            <!-- Thumbnails will be added by JavaScript -->
+        </div>
+        <div class="navigation-controls">
+            <div class="nav-group">
+                <button id="prevBtn" class="nav-btn" title="Previous Scene">◀◀</button>
+                <button id="gridBtn" class="nav-btn" title="Grid View">▦</button>
+                <button id="muteBtn" class="nav-btn" title="Toggle Sound">🔊</button>
+            </div>
+            <div class="nav-group">
+                <button id="leftBtn" class="nav-btn" title="Look Left">◀</button>
+                <button id="rightBtn" class="nav-btn" title="Look Right">▶</button>
+                <button id="upBtn" class="nav-btn" title="Look Up">▲</button>
+                <button id="downBtn" class="nav-btn" title="Look Down">▼</button>
+            </div>
+            <div class="nav-group">
+                <button id="zoomInBtn" class="nav-btn" title="Zoom In">+</button>
+                <button id="zoomOutBtn" class="nav-btn" title="Zoom Out">−</button>
+            </div>
+            <div class="nav-group">
+                <button id="fullscreenBtn" class="nav-btn" title="Fullscreen">⛶</button>
+                <button id="nextBtn" class="nav-btn" title="Next Scene">▶▶</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
