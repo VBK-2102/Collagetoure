@@ -19,3 +19,6 @@ It contains scenes and other components used to plan, manage, and simulate tours
 
 ### 👥 Authors
 Made by **V & S's** ✨
+
+### Collage Tour
+https://vbk-2102.github.io/Collagetoure/
