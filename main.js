@@ -19,33 +19,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Tour scenes configuration
+// Tour scenes configuration with updated navigation structure
 const tourScenes = {
-    aerialView: {
-        title: "Aerial View",
-        image: "scenes/aerial-view.jpg",
-        thumbnail: "scenes/aerial-view.jpg",
+    get1: {
+        title: "Main Gate 1",
+        image: "scenes/main-gate1.jpg",
+        thumbnail: "scenes/main-gate1.jpg",
+        audio: "scenes/get1.mp3",
+        initialViewParameters: {
+            pitch: 0,
+            yaw: 180,
+            fov: 100
+        },
         hotSpots: [
             {
-                pitch: -2.1,
-                yaw: 132.9,
+                pitch: 1,
+                yaw: 160,
                 type: "scene",
-                text: "Go to Main Gate",
-                sceneId: "mainGate"
+                text: "Go to Main Gate 2",
+                sceneId: "get2"
             },
             {
-                pitch: -5,
-                yaw: 90,
+                pitch: 1,
+                yaw: 295,
                 type: "scene",
-                text: "View Playground",
-                sceneId: "playground"
+                text: "Go to Boys Hostel",
+                sceneId: "boysHostel"
+            },
+            {
+                pitch: 1,
+                yaw: 270,
+                type: "scene",
+                text: "Go to Girls Hostel",
+                sceneId: "girlsHostel"
             }
         ]
     },
-    mainGate: {
-        title: "Main Gate",
-        image: "scenes/main-gate.jpg",
-        thumbnail: "scenes/main-gate.jpg",
+    get2: {
+        title: "Main Gate 2",
+        image: "scenes/main-gate2.jpg",
+        thumbnail: "scenes/main-gate2.jpg",
         hotSpots: [
             {
                 pitch: 0,
@@ -55,11 +68,18 @@ const tourScenes = {
                 sceneId: "adminBlock"
             },
             {
-                pitch: -10,
+                pitch: 1,
                 yaw: 180,
                 type: "scene",
-                text: "View Aerial View",
-                sceneId: "aerialView"
+                text: "Go to Playground",
+                sceneId: "playground"
+            },
+            {
+                pitch: 0,
+                yaw: 270,
+                type: "scene",
+                text: "Go to Main Gate 1",
+                sceneId: "get1"
             }
         ]
     },
@@ -70,11 +90,115 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
+                yaw: 350,
+                type: "scene",
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }
+        ]
+    },
+    openT: {
+        title: "Open Theatre",
+        image: "scenes/OpenT.jpg",
+        thumbnail: "scenes/OpenT.jpg",
+        hotSpots: [
+            {
+                pitch: 11,
+                yaw: 340,
+                type: "scene",
+                text: "Go to CSE Lab",
+                sceneId: "cseLab"
+            },
+            {
+                pitch: 7,
+                yaw: 200,
+                type: "scene",
+                text: "Go to AI Dept",
+                sceneId: "AI"
+            },{
+                pitch: 15,
+                yaw: 250,
+                type: "scene",
+                text: "Go to ClassRomm",
+                sceneId: "classroom"
+            },
+
+            {
+                pitch: 0,
+                yaw: 310,
+                type: "scene",
+                text: "Go to Mechanical Lab",
+                sceneId: "mechanicalLab"
+            },
+              {
+                pitch: 0,
+                yaw: 330,
+                type: "scene",
+                text: "Go to civil Staf ROOM",
+                sceneId: "civil"
+            },
+            {
+                pitch: 14,
+                yaw: 20,
+                type: "scene",
+                text: "Go to MBA",
+                sceneId: "mba"
+            },
+            {
+                pitch: 15,
+                yaw: 10,
+                type: "scene",
+                text: "Go to MCA",
+                sceneId: "mca"
+            },
+            {
+                pitch: 1,
+                yaw: 300,
+                type: "scene",
+                text: "Go to Diploma",
+                sceneId: "diploma"
+            },
+            {
+                pitch: 15,
+                yaw: 200,
+                type: "scene",
+                text: "Go to EEE Lab",
+                sceneId: "eeeLab"
+            },
+            {
+                pitch: 1,
+                yaw: 30,
+                type: "scene",
+                text: "Go to Physics Lab",
+                sceneId: "physicsLab"
+            },
+            {
+                pitch: 13,
+                yaw: 100,
+                type: "scene",
+                text: "Go to Library",
+                sceneId: "library"
+            },
+            {
+                pitch: -1,
+                yaw: 35,
+                type: "scene",
+                text: "Go to Chemistry Lab",
+                sceneId: "chemistryLab"
+            },
+            {
+                pitch: 8,
                 yaw: 90,
                 type: "scene",
-                text: "Go to CSE Department",
-                sceneId: "cseLab"
-            }
+                text: "Go to K-Tech Lab",
+                sceneId: "ktechLab"
+            },{
+                 pitch: 4,
+                yaw: 290,
+                type: "scene",
+                text: "Go to Mathematics staff room",
+                sceneId: "Mathematics"
+            },
         ]
     },
     cseLab: {
@@ -96,13 +220,6 @@ const tourScenes = {
                 text: "Go to CSE Staff Room",
                 sceneId: "cseStaffRoom"
             },
-            {
-                pitch: 0,
-                yaw: 180,
-                type: "scene",
-                text: "Go to Library",
-                sceneId: "library"
-            }
         ]
     },
     cseHOD: {
@@ -145,12 +262,12 @@ const tourScenes = {
         image: "scenes/Library.jpg",
         thumbnail: "scenes/Library.jpg",
         hotSpots: [
-            {
+        {
                 pitch: 0,
-                yaw: 90,
+                yaw: 350,
                 type: "scene",
-                text: "Go to Boys Hostel",
-                sceneId: "boysHostel"
+                text: "Go to Open Theatre",
+                sceneId: "openT"
             }
         ]
     },
@@ -158,7 +275,15 @@ const tourScenes = {
         title: "Classroom",
         image: "scenes/Classroom.jpg",
         thumbnail: "scenes/Classroom.jpg",
-        hotSpots: []
+        hotSpots: [
+            {
+                pitch: 0,
+                yaw: 350,
+                type: "scene",
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }
+        ]
     },
     boysHostel: {
         title: "Boys Hostel",
@@ -178,6 +303,13 @@ const tourScenes = {
                 type: "scene",
                 text: "Go to Mess",
                 sceneId: "mess"
+            },
+            {
+                pitch: 0,
+                yaw: 270,
+                type: "scene",
+                text: "Go to Main Gate 1",
+                sceneId: "get1"
             }
         ]
     },
@@ -192,6 +324,13 @@ const tourScenes = {
                 type: "scene",
                 text: "View Hostel Room",
                 sceneId: "hostelRoom"
+            },
+            {
+                pitch: 0,
+                yaw: 270,
+                type: "scene",
+                text: "Go to Main Gate 1",
+                sceneId: "get1"
             }
         ]
     },
@@ -205,6 +344,13 @@ const tourScenes = {
                 yaw: -90,
                 type: "scene",
                 text: "Back to Boys Hostel",
+                sceneId: "boysHostel"
+            },
+            {
+                pitch: 1,
+                yaw: 180,
+                type: "scene",
+                text: "Go to Boys Hostel",
                 sceneId: "boysHostel"
             }
         ]
@@ -220,6 +366,13 @@ const tourScenes = {
                 type: "scene",
                 text: "Go to Cafe",
                 sceneId: "cafe"
+            },
+            {
+                pitch: 1,
+                yaw: 295,
+                type: "scene",
+                text: "Go to Boys Hostel",
+                sceneId: "boysHostel"
             }
         ]
     },
@@ -229,33 +382,46 @@ const tourScenes = {
         thumbnail: "scenes/Cafe,jpg.jpg",
         hotSpots: [
             {
-                pitch: 0,
-                yaw: -90,
+                pitch: 1,
+                yaw: 180,
                 type: "scene",
-                text: "Back to Mess",
-                sceneId: "mess"
-            }
+                text: "Go to Playground",
+                sceneId: "playground"
+            },
         ]
     },
     playground: {
         title: "Playground",
         image: "scenes/Playground.jpg",
         thumbnail: "scenes/Playground.jpg",
-        hotSpots: [
+        hotSpots: [{
+            pitch:1,
+            yaw:120,
+            type:"scene",
+            text:"Go to Praking Area",
+            sceneId:"parking"
+        },
             {
-                pitch: 10,
-                yaw: -45,
+                pitch: 1,
+                yaw: 160,
                 type: "scene",
-                text: "View Aerial View",
-                sceneId: "aerialView"
-            }
-        ]
+                text: "Go to Main Gate 2",
+                sceneId: "get2"
+            },]
     },
     parking: {
         title: "Parking Area",
         image: "scenes/Parking.jpg",
         thumbnail: "scenes/Parking.jpg",
-        hotSpots: []
+        hotSpots: [
+            {
+                pitch: 1,
+                yaw: 160,
+                type: "scene",
+                text: "Go to Main Gate 2",
+                sceneId: "get2"
+            }
+        ]
     },
     mechanicalLab: {
         title: "Mechanical Lab",
@@ -270,11 +436,11 @@ const tourScenes = {
                 sceneId: "mechanicalStaffRoom"
             },
             {
-                pitch: 0,
+                pitch: 1,
                 yaw: 180,
                 type: "scene",
-                text: "Go to EEE Lab",
-                sceneId: "eeeLab"
+                text: "Go to Playground",
+                sceneId: "playground"
             }
         ]
     },
@@ -285,12 +451,25 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: -90,
+                yaw: 350,
                 type: "scene",
-                text: "Back to ME Lab",
-                sceneId: "mechanicalLab"
-            }
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            },
         ]
+    },
+    civil: {
+        title: "Civil Staf Room",
+        image: "scenes/Civilstafroom.jpg",
+        thumbnail: "scenes/Civilstafroom.jpg",
+        hotSpots: [
+            {
+                pitch: 0,
+                yaw: 350,
+                type: "scene",
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }]
     },
     eeeLab: {
         title: "EEE Lab",
@@ -299,19 +478,11 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: 90,
+                yaw: 350,
                 type: "scene",
-                text: "Go to Physics Lab",
-                sceneId: "physicsLab"
-            },
-            {
-                pitch: 0,
-                yaw: -90,
-                type: "scene",
-                text: "Back to ME Lab",
-                sceneId: "mechanicalLab"
-            }
-        ]
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }]
     },
     physicsLab: {
         title: "Physics Lab",
@@ -320,17 +491,10 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: -90,
+                yaw: 350,
                 type: "scene",
-                text: "Back to EEE Lab",
-                sceneId: "eeeLab"
-            },
-            {
-                pitch: 0,
-                yaw: 90,
-                type: "scene",
-                text: "Go to Chemistry Lab",
-                sceneId: "chemistryLab"
+                text: "Go to Open Theatre",
+                sceneId: "openT"
             }
         ]
     },
@@ -341,17 +505,10 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: -90,
+                yaw: 350,
                 type: "scene",
-                text: "Back to Physics Lab",
-                sceneId: "physicsLab"
-            },
-            {
-                pitch: 0,
-                yaw: 90,
-                type: "scene",
-                text: "Go to K-Tech Lab",
-                sceneId: "ktechLab"
+                text: "Go to Open Theatre",
+                sceneId: "openT"
             }
         ]
     },
@@ -362,10 +519,10 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: -90,
+                yaw: 350,
                 type: "scene",
-                text: "Back to Chemistry Lab",
-                sceneId: "chemistryLab"
+                text: "Go to Open Theatre",
+                sceneId: "openT"
             }
         ]
     },
@@ -376,19 +533,32 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: 90,
+                yaw: 100,
                 type: "scene",
-                text: "Go to MCA Department",
-                sceneId: "mca"
+                text: "Go to Open Theatre",
+                sceneId: "openT"
             },
             {
                 pitch: 0,
-                yaw: 180,
+                yaw: 350,
                 type: "scene",
-                text: "Go to Diploma Block",
-                sceneId: "diploma"
+                text: "Go to MBA HOD room",
+                sceneId: "MBAhod"
             }
         ]
+    },
+     MBAhod: {
+        title: "MBA HOD room",
+        image: "scenes/MABHOD.jpg",
+        thumbnail: "scenes/MABHOD.jpg",
+        hotSpots: [
+            {
+                pitch: 0,
+                yaw: 350,
+                type: "scene",
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }]
     },
     mca: {
         title: "MCA Department",
@@ -397,12 +567,11 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: -90,
+                yaw: 350,
                 type: "scene",
-                text: "Back to MBA Department",
-                sceneId: "mba"
-            }
-        ]
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }]
     },
     diploma: {
         title: "Diploma Block",
@@ -411,83 +580,228 @@ const tourScenes = {
         hotSpots: [
             {
                 pitch: 0,
-                yaw: -90,
+                yaw: 350,
                 type: "scene",
-                text: "Back to MBA Department",
-                sceneId: "mba"
-            },
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }
+        ]
+    },
+    Mathematics: {
+        title: "Mathematics Staf Room",
+        image: "scenes/MathStafroom.jpg",
+        thumbnail: "scenes/MathStafroom.jpg",
+        hotSpots: [
             {
                 pitch: 0,
-                yaw: 90,
+                yaw: 350,
                 type: "scene",
-                text: "Go to Admin Block",
-                sceneId: "adminBlock"
+                text: "Go to Open Theatre",
+                sceneId: "openT"
+            }
+        ]
+    },
+    AI: {
+        title: "AIStafroom",
+        image: "scenes/AIStafroom.jpg",
+        thumbnail: "scenes/AIStafroom.jpg",
+        hotSpots: [
+            {
+                pitch: 0,
+                yaw: 350,
+                type: "scene",
+                text: "Go to Open Theatre",
+                sceneId: "openT"
             }
         ]
     }
 };
-
 // Initialize viewer and variables
 let viewer = null;
-let currentScene = 'aerialView';
+let currentScene = 'get1';
 let isAutoRotating = false;
-let rotationSpeed = 2; // degrees per second
+let rotationSpeed = 3;
 let isMuted = false;
+let audioElement = null;
+let gridClickHandler = null;
 
 function initializeTour() {
     // Create thumbnails with titles
     const thumbnailStrip = document.querySelector('.thumbnail-strip');
+    thumbnailStrip.innerHTML = ''; // Clear existing thumbnails
+    
     Object.entries(tourScenes).forEach(([id, scene]) => {
         const thumb = document.createElement('div');
         thumb.className = 'thumbnail';
         thumb.style.backgroundImage = `url(${scene.thumbnail})`;
-        thumb.title = scene.title;
         thumb.dataset.sceneId = id;
         
-        // Add title overlay to thumbnail
         const titleOverlay = document.createElement('div');
         titleOverlay.className = 'thumbnail-title';
         titleOverlay.textContent = scene.title;
         thumb.appendChild(titleOverlay);
         
-        thumb.addEventListener('click', () => switchScene(id));
+        thumb.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            switchScene(id);
+            
+            // Close grid after selection
+            const thumbnailStrip = document.querySelector('.thumbnail-strip');
+            const gridBtn = document.getElementById('gridBtn');
+            thumbnailStrip.classList.remove('show');
+            gridBtn.classList.remove('active');
+            
+            if (gridClickHandler) {
+                document.removeEventListener('click', gridClickHandler);
+                gridClickHandler = null;
+            }
+        });
+        
         thumbnailStrip.appendChild(thumb);
     });
-
-    // Initialize Pannellum viewer with enhanced options
+    // Initialize Pannellum viewer
     viewer = pannellum.viewer('tourContainer', {
         default: {
-            firstScene: 'aerialView',
+            firstScene: currentScene,
             sceneFadeDuration: 1000,
             autoLoad: true,
             autoRotate: 0,
-            autoRotateInactivityDelay: 3000
+            autoRotateInactivityDelay: 3000,
+            hotSpotDebug: false,
+            showZoomCtrl: false,
+            showFullscreenCtrl: false,
+            mouseZoom: false
         },
         scenes: Object.entries(tourScenes).reduce((acc, [id, scene]) => {
             acc[id] = {
                 title: scene.title,
                 type: "equirectangular",
                 panorama: scene.image,
-                hotSpots: scene.hotSpots,
-                yaw: 0,
-                pitch: 0,
-                hfov: 100
+                hotSpots: scene.hotSpots.map(hotspot => ({
+                    pitch: hotspot.pitch,
+                    yaw: hotspot.yaw,
+                    type: hotspot.type,
+                    text: hotspot.text,
+                    sceneId: hotspot.sceneId,
+                    cssClass: 'custom-hotspot',
+                    clickHandlerFunc: () => smoothSceneChange(hotspot.sceneId)
+                })),
+                yaw: scene.initialViewParameters?.yaw || 0,
+                pitch: scene.initialViewParameters?.pitch || 0,
+                hfov: scene.initialViewParameters?.fov || 100
             };
             return acc;
         }, {})
     });
 
-    // Add event listeners for navigation controls with visual feedback
-    setupNavigationControls();
-    
-    // Update thumbnail highlighting when scene changes
-    viewer.on('scenechange', (sceneId) => {
-        currentScene = sceneId;
+    // Auto-play audio for first scene
+    playSceneAudio(currentScene);
+
+    // Update when scene changes
+    viewer.on('scenechange', (newSceneId) => {
+        currentScene = newSceneId;
         updateThumbnailHighlight();
+        
+        // Stop previous audio and play new scene audio
+        stopAudio();
+        playSceneAudio(newSceneId);
+        
         // Reset auto-rotation when changing scenes
         if (isAutoRotating) {
             viewer.startAutoRotate(rotationSpeed);
         }
+    });
+
+    // Setup navigation controls
+    setupNavigationControls();
+}
+
+function playSceneAudio(sceneId) {
+    if (isMuted || !tourScenes[sceneId]?.audio) return;
+    
+    stopAudio();
+    
+    audioElement = new Audio(tourScenes[sceneId].audio);
+    audioElement.volume = 0.7;
+    
+    // Enable autoplay by first playing on a user interaction
+    const playAudio = () => {
+        audioElement.play().catch(e => console.log("Audio play failed:", e));
+        document.removeEventListener('click', playAudio);
+        document.removeEventListener('keydown', playAudio);
+    };
+    
+    // Wait for user interaction before playing
+    document.addEventListener('click', playAudio, { once: true });
+    document.addEventListener('keydown', playAudio, { once: true });
+}
+
+function stopAudio() {
+    if (audioElement) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+    }
+}
+
+function toggleMute() {
+    isMuted = !isMuted;
+    const muteBtn = document.getElementById('muteBtn');
+    muteBtn.classList.toggle('muted');
+    muteBtn.innerHTML = isMuted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+    
+    if (isMuted) {
+        stopAudio();
+    } else {
+        playSceneAudio(currentScene);
+    }
+}
+
+function smoothSceneChange(sceneId) {
+    // Create transition overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'transition-overlay';
+    document.getElementById('tourContainer').appendChild(overlay);
+    
+    // Fade in overlay
+    setTimeout(() => {
+        overlay.style.opacity = '1';
+    }, 10);
+    
+    // Change scene after delay
+    setTimeout(() => {
+        switchScene(sceneId);
+        
+        // After scene loads, fade out overlay
+        viewer.on('load', function() {
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+                
+                // Remove overlay after transition
+                setTimeout(() => {
+                    overlay.remove();
+                }, 800);
+            }, 300);
+        }, { once: true });
+    }, 500);
+}
+
+function switchScene(sceneId) {
+    if (!viewer || !sceneId || !tourScenes[sceneId]) return;
+    
+    try {
+        viewer.loadScene(sceneId);
+        currentScene = sceneId;
+        updateThumbnailHighlight();
+    } catch (error) {
+        console.error('Error loading scene:', error);
+    }
+}
+
+function updateThumbnailHighlight() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(thumb => {
+        thumb.classList.toggle('active', thumb.dataset.sceneId === currentScene);
     });
 }
 
@@ -546,18 +860,15 @@ function setupNavigationControls() {
 
 function setupButton(id, action) {
     const button = document.getElementById(id);
+    if (!button) return;
     
-    // Mouse events
     button.addEventListener('click', (e) => {
         e.preventDefault();
         button.classList.add('pressed');
         action();
-        
-        // Remove pressed state after animation
         setTimeout(() => button.classList.remove('pressed'), 200);
     });
 
-    // Touch events
     button.addEventListener('touchstart', (e) => {
         e.preventDefault();
         button.classList.add('pressed');
@@ -574,38 +885,40 @@ function toggleFullscreen() {
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
-        fullscreenBtn.innerHTML = '';
+        fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
     } else {
         document.exitFullscreen();
-        fullscreenBtn.innerHTML = '';
+        fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
     }
-}
-
-function toggleMute() {
-    const muteBtn = document.getElementById('muteBtn');
-    isMuted = !isMuted;
-    muteBtn.classList.toggle('muted');
-    muteBtn.innerHTML = isMuted ? '' : '';
-    // Add your audio handling logic here
 }
 
 function toggleGrid() {
     const thumbnailStrip = document.querySelector('.thumbnail-strip');
     const gridBtn = document.getElementById('gridBtn');
     
+    if (!thumbnailStrip || !gridBtn) return;
+    
+    // Remove previous handler if exists
+    if (gridClickHandler) {
+        document.removeEventListener('click', gridClickHandler);
+    }
+    
+    // Toggle grid visibility
     thumbnailStrip.classList.toggle('show');
-    thumbnailStrip.classList.toggle('grid-view');
     gridBtn.classList.toggle('active');
     
-    // Hide thumbnail strip when clicking outside
     if (thumbnailStrip.classList.contains('show')) {
-        document.addEventListener('click', function closeGrid(e) {
+        // Add new handler
+        gridClickHandler = (e) => {
+            // Close if clicking outside grid or on grid button
             if (!thumbnailStrip.contains(e.target) && e.target !== gridBtn) {
-                thumbnailStrip.classList.remove('show', 'grid-view');
+                thumbnailStrip.classList.remove('show');
                 gridBtn.classList.remove('active');
-                document.removeEventListener('click', closeGrid);
+                document.removeEventListener('click', gridClickHandler);
+                gridClickHandler = null;
             }
-        });
+        };
+        document.addEventListener('click', gridClickHandler);
     }
 }
 
@@ -614,6 +927,21 @@ function stopAutoRotate() {
         isAutoRotating = false;
         viewer.stopAutoRotate();
     }
+}
+
+function navigateScenes(direction) {
+    const sceneIds = Object.keys(tourScenes);
+    const currentIndex = sceneIds.indexOf(currentScene);
+    let newIndex;
+
+    if (direction === 'prev') {
+        newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = sceneIds.length - 1;
+    } else {
+        newIndex = (currentIndex + 1) % sceneIds.length;
+    }
+
+    smoothSceneChange(sceneIds[newIndex]);
 }
 
 function handleKeyPress(e) {
@@ -667,38 +995,5 @@ function handleKeyPress(e) {
     }
 }
 
-function switchScene(sceneId) {
-    viewer.loadScene(sceneId);
-}
-
-function navigateScenes(direction) {
-    const sceneIds = Object.keys(tourScenes);
-    const currentIndex = sceneIds.indexOf(currentScene);
-    let newIndex;
-
-    if (direction === 'prev') {
-        newIndex = currentIndex - 1;
-        if (newIndex < 0) newIndex = sceneIds.length - 1;
-    } else {
-        newIndex = (currentIndex + 1) % sceneIds.length;
-    }
-
-    switchScene(sceneIds[newIndex]);
-}
-
-function updateThumbnailHighlight() {
-    document.querySelectorAll('.thumbnail').forEach(thumb => {
-        thumb.classList.toggle('active', thumb.dataset.sceneId === currentScene);
-    });
-}
-
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeTour);
-
-// Form submission handler
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Add your form submission logic here
-    alert('Thank you for your message! We will get back to you soon.');
-    this.reset();
-});
